@@ -1,0 +1,32 @@
+<mat-drawer-container class="example-container" [hasBackdrop]="hasBackdrop.value">
+    <mat-drawer #drawer [mode]="mode.value">
+      <div style="display: flex; flex-direction: column;">
+      <a mat-raised-button routerLink="tree">Foods</a>
+      <a mat-raised-button routerLink="table">Periodic Table</a>
+      <a mat-raised-button routerLink="weather">Weather</a>
+    </div>
+  </mat-drawer>
+    <mat-drawer-content>
+      <app-menu class="main-menu"></app-menu>
+      <router-outlet></router-outlet>
+      <div class="sidenav-options">
+      <mat-form-field>
+        <mat-label>Sidenav mode</mat-label>
+        <mat-select #mode value="side">
+          <mat-option value="side">Side</mat-option>
+          <mat-option value="over">Over</mat-option>
+          <mat-option value="push">Push</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Has backdrop</mat-label>
+        <mat-select #hasBackdrop>
+          <mat-option>Unset</mat-option>
+          <mat-option [value]="true">True</mat-option>
+          <mat-option [value]="false">False</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+    </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
