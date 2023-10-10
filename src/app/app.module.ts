@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -12,7 +12,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
-import { ErrorStateMatcher, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
+import {
+  ErrorStateMatcher,
+  ShowOnDirtyErrorStateMatcher,
+} from '@angular/material/core';
 import { CardComponent } from './card/card.component';
 import { WindowComponent } from './window/window.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -23,22 +26,14 @@ import { TableComponent } from './table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherComponent } from './weather/weather.component';
 import { MatFormField } from '@angular/material/form-field';
-import { WeatherlistComponent } from './weatherlist/weatherlist.component';
-
-
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    WindowComponent,
-    WeatherlistComponent
-    
-  ],
+  declarations: [AppComponent, WindowComponent],
   imports: [
-    BrowserModule, 
-    BrowserAnimationsModule, 
-    FlexLayoutModule, 
-    AppRoutingModule, 
+    BrowserModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    AppRoutingModule,
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
@@ -55,10 +50,10 @@ import { WeatherlistComponent } from './weatherlist/weatherlist.component';
     TreeComponent,
     WeatherComponent,
     HttpClientModule,
-    
   ],
-  providers: [    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
+  providers: [
+    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
