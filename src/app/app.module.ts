@@ -23,13 +23,15 @@ import { TableComponent } from './table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherComponent } from './weather/weather.component';
 import { MatFormField } from '@angular/material/form-field';
+import { WeatherlistComponent } from './weatherlist/weatherlist.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    WindowComponent
+    WindowComponent,
+    WeatherlistComponent
     
   ],
   imports: [
