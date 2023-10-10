@@ -22,15 +22,14 @@ import { TreeComponent } from './tree/tree.component';
 import { TableComponent } from './table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { WeatherComponent } from './weather/weather.component';
-import { MatFormField } from '@angular/material/form-field';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    WindowComponent
-    
+    WindowComponent,  
+      
   ],
   imports: [
     BrowserModule, 
@@ -52,7 +51,8 @@ import { MatFormField } from '@angular/material/form-field';
     TableComponent,
     TreeComponent,
     WeatherComponent,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
   ],
