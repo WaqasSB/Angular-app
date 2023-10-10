@@ -54,7 +54,8 @@ import { WeatherlistComponent } from './weatherlist/weatherlist.component';
     TableComponent,
     TreeComponent,
     WeatherComponent,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [    {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}
   ],

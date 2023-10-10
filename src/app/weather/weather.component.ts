@@ -12,13 +12,14 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClient } from '@angular/common/http';
 import { GetdataService } from '../services/getdata.service';
+import { WeathercardComponent } from '../weathercard/weathercard.component';
 
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
   styleUrls: ['./weather.component.css'],
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, NgIf, MatListModule, MatIconModule, FormsModule, MatInputModule, MatFormFieldModule]
+  imports: [MatCardModule, MatButtonModule, NgIf, MatListModule, MatIconModule, FormsModule, MatInputModule, MatFormFieldModule, WeathercardComponent]
 })
 export class WeatherComponent implements OnInit {
 
@@ -39,7 +40,7 @@ export class WeatherComponent implements OnInit {
     .subscribe({
       next: (response) => {
         this.weatherData=response
-        console.log(response);
+        console.log(this.weatherData);
 
         this.http.post('http://localhost:3000/weatherData', this.weatherData).subscribe({
         next: () => {
@@ -59,7 +60,7 @@ export class WeatherComponent implements OnInit {
     .subscribe({
       next: (response) => {
         this.weatherData=response
-        console.log(response);
+        console.log(this.weatherData);
 
 
         this.http.post('http://localhost:3000/weatherData', this.weatherData).subscribe({

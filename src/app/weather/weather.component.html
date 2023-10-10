@@ -1,43 +1,19 @@
-<!-- <div *ngFor="let weatherCard of weatherDataArray"
-[weatherData]="weatherCard">
- --><mat-card class="example-card" *ngIf="weatherData">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"><img src={{weatherData.current.condition.icon}}></div>
-      <mat-card-title>{{weatherData.location.name}}</mat-card-title>
-      <mat-card-subtitle>{{weatherData.location.country}}</mat-card-subtitle>
-      <mat-card-subtitle>{{weatherData.location.localtime}}</mat-card-subtitle>
-    </mat-card-header>
-    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
-    <mat-card-content>
-        <h3>{{weatherData.current.condition.text}}</h3>
-        <mat-list>
-          <mat-list-item>
-            <span matListItemTitle>Temperature</span>
-            <span>{{weatherData.current.temp_c}}`C    ( {{weatherData.current.temp_f}}`F )</span>
-          </mat-list-item>
-          <mat-list-item>
-            <span matListItemTitle>Feels Like</span>
-            <span matListItemLine>{{weatherData.current.feelslike_c}}`C  ( {{weatherData.current.feelslike_f}}`F  ) </span>
-          </mat-list-item>
-          <mat-list-item>
-            <span matListItemTitle>Humidity</span>
-            {{weatherData.current.humidity}} %
-          </mat-list-item>
-        </mat-list>
-    </mat-card-content>
-    <mat-card-actions>
-        <form #myForm="ngForm" (ngSubmit)="getCityData(value)">
+<mat-card-actions>
+  <form #myForm="ngForm" (ngSubmit)="getCityData(value)">
 
-        <mat-form-field class="example-form-field">
-            <mat-label>Enter City Name</mat-label>
-            <input matInput type="text"name="city" [(ngModel)]="value">
-            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-              <mat-icon>close</mat-icon>
-            </button>
-          </mat-form-field>
-          
-      <button mat-button type="submit">Update</button>
-        </form>
-    </mat-card-actions>
-  </mat-card>
+  <mat-form-field class="example-form-field">
+      <mat-label>Enter City Name</mat-label>
+      <input matInput type="text"name="city" [(ngModel)]="value">
+      <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    
+<button mat-button type="submit">Update</button>
+  </form>
+</mat-card-actions>
+
+<app-weathercard [weatherData]="weatherData!"></app-weathercard>
+<!-- <div >
+ -->
 <!-- </div> -->
